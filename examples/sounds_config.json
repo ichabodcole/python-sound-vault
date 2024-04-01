@@ -1,0 +1,35 @@
+{
+    "format_version": "0.1",
+    "last_updated": 1711996840968,
+    "sounds_dir": "./sounds",
+    "sounds": [
+        {
+            "id": "1",
+            "name": "Overhead Wind Chimes",
+            "file_name": "460480__djczyszy__chimes-overheads_001.mp3",
+            "format": "mp3",
+            "description": "Wind chimes recorded with a pair of Rode M3s in XY position.",
+            "tags": [
+                "chime",
+                "chimes",
+                "instrument"
+            ],
+            "source": "https://freesound.org/people/DJczyszy/sounds/460480/",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+            "id": "2",
+            "name": "Voice Elephant",
+            "file_name": "18755__wim__frogs01.mp3",
+            "format": "mp3",
+            "description": "Sound of an elephant roar",
+            "tags": [
+                "elephant",
+                "animal",
+                "nature"
+            ],
+            "source": "https://freesound.org/people/vataaa/sounds/148873/",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+    ]
+}
