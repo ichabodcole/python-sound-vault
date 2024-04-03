@@ -1,14 +1,12 @@
 import os
-import json
 from .schemas.sound_vault_config import SoundVaultConfig, SoundVaultEntry
 from .sound_loader import SoundLoader
 
 
 class SoundVault:
-    def __init__(self, sound_config_file_path: str, output_sample_rate: int = 44100, output_channels: int | None = None):
-        sound_config = self.__load_config_file(sound_config_file_path)
-        self.config = sound_config
-        self.sounds_dir = sound_config.sounds_dir
+    def __init__(self, sound_vault_config: SoundVaultConfig, output_sample_rate: int = 44100, output_channels: int | None = None):
+        self.config = sound_vault_config
+        self.sounds_dir = sound_vault_config.sounds_dir
         self.output_sample_rate = output_sample_rate
         self.output_channels = output_channels
 
@@ -46,15 +44,3 @@ class SoundVault:
         )
 
         return sound_loader.load()
-
-    def __load_config_file(self, sound_config_file_path: str):
-        if not os.path.exists(sound_config_file_path):
-            raise FileNotFoundError(
-                f'Error: sound config file {sound_config_file_path} not found')
-
-        with open(sound_config_file_path, 'r') as f:
-            config_data = json.load(f)
-
-        sound_config = SoundVaultConfig.model_validate(config_data)
-
-        return sound_config
