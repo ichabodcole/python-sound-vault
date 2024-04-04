@@ -17,5 +17,4 @@ class SoundVaultEntry(BaseModel):
 class SoundVaultConfig(BaseModel):
     format_version: str
     last_updated: int
-    sounds_dir: str
     sounds: List[SoundVaultEntry]

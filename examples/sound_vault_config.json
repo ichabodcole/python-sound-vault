@@ -1,7 +1,6 @@
 {
     "format_version": "0.1",
     "last_updated": 1711996840968,
-    "sounds_dir": "./sounds",
     "sounds": [
         {
             "id": "1",

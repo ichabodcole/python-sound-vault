@@ -4,11 +4,16 @@ from .sound_loader import SoundLoader
 
 
 class SoundVault:
-    def __init__(self, sound_vault_config: SoundVaultConfig, output_sample_rate: int = 44100, output_channels: int | None = None):
+    def __init__(self, sound_vault_config: SoundVaultConfig, sounds_dir: str, output_sample_rate: int = 44100, output_channels: int | None = None):
         self.config = sound_vault_config
-        self.sounds_dir = sound_vault_config.sounds_dir
         self.output_sample_rate = output_sample_rate
         self.output_channels = output_channels
+
+        if not os.path.exists(sounds_dir):
+            raise FileNotFoundError(
+                f'Error: sounds directory {sounds_dir} not found')
+
+        self.sounds_dir = sounds_dir
 
     def get_sounds(self):
         return self.config.sounds
